@@ -1,16 +1,14 @@
-version: "3"
 services:
   adguardhome:
     image: adguard/adguardhome:latest
     container_name: adguardhome
-    ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 853:853/tcp
-      - 3000:3000/tcp
-      - 9080:80/tcp
-      - 443:443/tcp
+    network_mode: host
+     ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "9080:80/tcp"
+      - "3000:3000/tcp"
     volumes:
-      - ./workdir:/opt/adguardhome/work
-      - ./confdir:/opt/adguardhome/conf
+      - /path/to/adguardhome/work:/opt/adguardhome/work
+      - /path/to/adguardhome/conf:/opt/adguardhome/conf
     restart: unless-stopped
