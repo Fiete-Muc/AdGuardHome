@@ -3,6 +3,7 @@ services:
   adguardhome:
     image: adguard/adguardhome:latest
     container_name: adguardhome
+    network_mode: brigde
     ports:
       - 53:53/tcp
       - 53:53/udp
