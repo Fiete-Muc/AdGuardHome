@@ -3,11 +3,11 @@ services:
     image: adguard/adguardhome:latest
     container_name: adguardhome
     network_mode: host
-     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "9080:80/tcp"
-      - "3000:3000/tcp"
+    ports:
+     - "53:53/tcp"
+     - "53:53/udp"
+     - "9080:80/tcp"
+     - "3000:3000/tcp"
     volumes:
       - /path/to/adguardhome/work:/opt/adguardhome/work
       - /path/to/adguardhome/conf:/opt/adguardhome/conf
